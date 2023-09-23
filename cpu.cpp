@@ -10,7 +10,8 @@ Vector2 Cpu::getPosition() {
 
 void Cpu::move(Vector2 ballPosition, Vector2 ballDirection) {
 	if (ballDirection.x < 0) return;
-	this->position.y = ballPosition.y - (this->height/2);
+	// this->position.y = ballPosition.y - (this->height/2);
+	this->position.y += (ballPosition.y - (this->position.y + 25)) / 10;
 }
 
 void Cpu::drawCpu() {
